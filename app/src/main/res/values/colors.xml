@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="select">#1bac19</color>
+    <color name="select_f">#babcbf</color>
+    <color name="tetle_bag">#38383d</color>
+    <color name="tetlt_tv">#ffffff</color>
+
+</resources>

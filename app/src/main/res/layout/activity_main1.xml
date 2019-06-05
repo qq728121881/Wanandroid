@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="MainActivity">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout"
+        android:background="#efeff4">
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#f7f7f8"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/rgTools"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+
+            <RadioButton
+                android:id="@+id/rbHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/selector_main_btn_home"
+                android:gravity="center"
+                android:text="首页"
+                android:textColor="#1bac19" />
+
+            <RadioButton
+                android:visibility="gone"
+                android:id="@+id/rbShop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="false"
+                android:drawableTop="@drawable/selector_main_btn_shopcart"
+                android:gravity="center"
+                android:text="对话"
+                android:textColor="#babcbf" />
+
+
+            <RadioButton
+                android:visibility="gone"
+                android:id="@+id/add_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="false"
+                android:drawableTop="@mipmap/add"
+                android:gravity="center" />
+
+
+            <RadioButton
+                android:id="@+id/rbMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="false"
+                android:drawableTop="@drawable/selector_main_btn_message"
+                android:gravity="center"
+                android:text="统计"
+                android:textColor="#babcbf" />
+
+            <RadioButton
+                android:id="@+id/rbMine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="false"
+                android:drawableTop="@drawable/selector_main_btn_mine"
+                android:gravity="center"
+                android:text="黑白名单"
+                android:textColor="#babcbf" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <!--  <LinearLayout
+          android:id="@+id/add_icon"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_centerHorizontal="true"
+          android:layout_gravity="center_horizontal|bottom"
+          android:layout_marginBottom="3dp">
+
+          <ImageView
+
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:layout_gravity="center_horizontal|bottom"
+              android:layout_marginBottom="35dp"
+              android:src="@mipmap/ic_launcher" />
+
+      </LinearLayout>-->
+
+
+</RelativeLayout>
