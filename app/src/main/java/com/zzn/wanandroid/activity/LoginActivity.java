@@ -61,8 +61,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 break;
             case R.id.login_but:
-//                Intent intent = new Intent(new Intent(this, Main1Activity.class));
-                Intent intent = new Intent(new Intent(this, TestActivity.class));
+                Intent intent = new Intent(new Intent(this, Main1Activity.class));
+//                Intent intent = new Intent(new Intent(this, TestActivity.class));
                 startActivity(intent);
 
                 break;
