@@ -2,17 +2,17 @@ package com.zzn.wanandroid.bean
 
 /**
  *    author : 郑振楠
- *    date   : 2019/6/5
+ *    date   : 2019/6/18
  */
-data class Test(
-    val `data`: Data,
+data class projectcontextbean(
+    val `data`: Datacontext,
     val errorCode: Int,
     val errorMsg: String
 )
 
-data class Data(
+data class Datacontext(
     val curPage: Int,
-    val datas: MutableList<DataX>,
+    val datas: MutableList<DataXcontext>,
     val offset: Int,
     val over: Boolean,
     val pageCount: Int,
@@ -20,7 +20,7 @@ data class Data(
     val total: Int
 )
 
-data class DataX(
+data class DataXcontext(
     val apkLink: String,
     val author: String,
     val chapterId: Int,
@@ -39,7 +39,7 @@ data class DataX(
     val publishTime: Long,
     val superChapterId: Int,
     val superChapterName: String,
-    val tags: List<Tag>,
+    val tags: List<Tagcontext>,
     val title: String,
     val type: Int,
     val userId: Int,
@@ -47,7 +47,7 @@ data class DataX(
     val zan: Int
 )
 
-data class Tag(
+data class Tagcontext(
     val name: String,
     val url: String
 )

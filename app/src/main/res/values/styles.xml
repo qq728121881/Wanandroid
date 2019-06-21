@@ -10,5 +10,7 @@
     <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:button">@drawable/selector_pasword</item>
     </style>
-
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

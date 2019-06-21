@@ -8,11 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.Initializable
 import com.zzn.wanandroid.R
 import com.zzn.wanandroid.RetrofitConfig.ServiceFactory
 import com.zzn.wanandroid.ServiceAPI.ConfigURL
 import com.zzn.wanandroid.bean.DataX
+import com.zzn.wanandroid.bean.DataXcontext
 import com.zzn.wanandroid.ui.home.HomeWebView
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,19 +25,20 @@ import java.util.*
  *    author : 郑振楠
  *    date   : 2019/6/4
  */
-class HomeAdapter(var data: MutableList<DataX>, var context: FragmentActivity?) : RecyclerView.Adapter<HomeAdapter.MyHolde>() {
+class ProjectContextAdapter(var data: MutableList<DataXcontext>, var context: FragmentActivity?) : RecyclerView.Adapter<ProjectContextAdapter.MyHolde>() {
     lateinit var uri: String
 
-    fun addDatas(datas: List<DataX>) {
+
+    fun addDatas(datas: List<DataXcontext>) {
         this.data.addAll(datas)
         notifyDataSetChanged()
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): HomeAdapter.MyHolde {
+    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): MyHolde {
 
         val inflate = LayoutInflater.from(context).inflate(com.zzn.wanandroid.R.layout.home_item, parent, false)
-        var holder = HomeAdapter.MyHolde(inflate)
+        var holder = ProjectContextAdapter.MyHolde(inflate)
         return holder
 
     }
@@ -53,25 +54,24 @@ class HomeAdapter(var data: MutableList<DataX>, var context: FragmentActivity?) 
             holder.title.text = data.get(position).title
             holder.type_tv.text = data.get(position).superChapterName
 
+
+
             if (data.get(position).collect) {
                 Glide.with(this!!.context!!).load(R.mipmap.like_true).into(holder.like)
             } else {
                 Glide.with(this!!.context!!).load(R.mipmap.like_false).into(holder.like)
             }
 
-
-
-
             holder.ll.setOnClickListener {
 
                 Toast.makeText(context, "$position", Toast.LENGTH_LONG).show()
-
                 val intent = Intent(Intent(context, HomeWebView::class.java))
                 intent.putExtra("title", data.get(position).title)
                 intent.putExtra("link", data.get(position).link)
                 context!!.startActivity(intent)
 
             }
+
 
             holder.like_rl.setOnClickListener {
 

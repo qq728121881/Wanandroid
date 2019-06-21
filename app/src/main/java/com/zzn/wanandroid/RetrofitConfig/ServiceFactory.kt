@@ -1,10 +1,12 @@
 package com.zzn.wanandroid.RetrofitConfig
 
+import android.text.TextUtils
 import com.google.gson.Gson
 import com.zzn.wanandroid.ServiceAPI.ConfigURL
 import com.zzn.wanandroid.ServiceAPI.ServiceAPI
 import com.zzn.wanandroid.application.MyApplication
 import com.zzn.wanandroid.utils.ACache
+import com.zzn.wanandroid.utils.CookiesManager
 
 import java.io.IOException
 import java.util.concurrent.TimeUnit
@@ -28,26 +30,35 @@ object ServiceFactory {
     private val MAX_CACHE_SIZE = (10 * 1024 * 1024).toLong()
     private val TIMEOUT = 30
     private val OK_HTTP_CLIENT: OkHttpClient
-//    internal var aCache: ACache
-    private var token: String? = null
+    internal var aCache: ACache
+    private var username: String? = null
+    private var pws: String? = null
 
     private var businessApi: ServiceAPI? = null
 
     init {
-//        aCache = ACache.get(MyApplication.getContext())
+
+        aCache = ACache.get(MyApplication.getContext())
         val builder = OkHttpClient.Builder()
                 //                .cache(new Cache(new File(App.getApp().getFilesDir(), "retrofit"), MAX_CACHE_SIZE))
                 .connectTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
                 .readTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
                 .writeTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
+                .cookieJar(CookiesManager())
                 .followRedirects(true)
                 .retryOnConnectionFailure(true)
 
         builder.addInterceptor { chain ->
-//            token = aCache.getAsString("Token")
+            username = aCache.getAsString("username")
+            pws = aCache.getAsString("pws")
+
+            if (TextUtils.isEmpty(username)) {
+                username = "0"
+            }
             val originalRequest = chain.request()
             val authorised = originalRequest.newBuilder()
 //                    .header("Authorization", "Bearer " + token!!)
+
                     .build()
             chain.proceed(authorised)
         }
@@ -67,6 +78,7 @@ object ServiceFactory {
                             .addConverterFactory(GsonConverterFactory.create(Gson()))
                             //配置的URL
                             .baseUrl(ConfigURL.Object.API_URL)
+
                             .client(OK_HTTP_CLIENT)
                             .build()
 

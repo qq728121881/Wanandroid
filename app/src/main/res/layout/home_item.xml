@@ -21,8 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_alignParentBottom="true"
-            android:background="#DFDFDD"
-            />
+            android:background="#DFDFDD" />
     </RelativeLayout>
 
 
@@ -72,9 +71,29 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="45dp"
                 android:text="@string/text_tv"
                 android:textColor="#2b2b2b"
                 android:textSize="15sp" />
+
+            <RelativeLayout
+                android:id="@+id/like_rl"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp">
+
+
+                <ImageView
+                    android:id="@+id/like_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/like_false" />
+            </RelativeLayout>
+
+
         </RelativeLayout>
 
         <RelativeLayout
@@ -99,8 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_alignParentBottom="true"
-            android:background="#DFDFDD"
-            />
+            android:background="#DFDFDD" />
     </LinearLayout>
 
 

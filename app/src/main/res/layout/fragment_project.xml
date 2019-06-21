@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/refreshLayout"
     android:layout_width="match_parent"
@@ -13,50 +12,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp">
-
-            <com.youth.banner.Banner
-                android:id="@+id/banner"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-            </com.youth.banner.Banner>
-
-        </RelativeLayout>
-
-        <com.google.android.flexbox.FlexboxLayout
-            android:visibility="gone"
-            android:id="@+id/mFlexboxLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            app:alignContent="flex_start"
-            app:alignItems="center"
-            app:flexDirection="row"
-            app:flexWrap="wrap"
-            app:justifyContent="flex_start"
-           >
-        </com.google.android.flexbox.FlexboxLayout>
-
-        <View
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#DFDFDD" />
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <RelativeLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="400dp">
+                android:layout_height="match_parent">
 
                 <!--<android.support.v4.widget.SwipeRefreshLayout-->
                 <!--android:id="@+id/swipe_rl"-->
@@ -67,7 +31,7 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                 </android.support.v7.widget.RecyclerView>
 
@@ -80,7 +44,7 @@
         </LinearLayout>
 
         <RelativeLayout
-            android:id="@+id/more_rl"
+            android:id="@+id/more_rl1"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_below="@+id/swipe_rl"

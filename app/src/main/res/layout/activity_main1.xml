@@ -45,22 +45,8 @@
                 android:text="首页"
                 android:textColor="#1bac19" />
 
-            <RadioButton
-                android:visibility="gone"
-                android:id="@+id/rbShop"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:button="@null"
-                android:checked="false"
-                android:drawableTop="@drawable/selector_main_btn_shopcart"
-                android:gravity="center"
-                android:text="对话"
-                android:textColor="#babcbf" />
-
 
             <RadioButton
-                android:visibility="gone"
                 android:id="@+id/add_icon"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -69,7 +55,8 @@
                 android:button="@null"
                 android:checked="false"
                 android:drawableTop="@mipmap/add"
-                android:gravity="center" />
+                android:gravity="center"
+                android:visibility="gone" />
 
 
             <RadioButton
@@ -81,7 +68,7 @@
                 android:checked="false"
                 android:drawableTop="@drawable/selector_main_btn_message"
                 android:gravity="center"
-                android:text="统计"
+                android:text="项目"
                 android:textColor="#babcbf" />
 
             <RadioButton
@@ -94,9 +81,20 @@
                 android:checked="false"
                 android:drawableTop="@drawable/selector_main_btn_mine"
                 android:gravity="center"
-                android:text="黑白名单"
+                android:text="体系"
                 android:textColor="#babcbf" />
 
+            <RadioButton
+                android:id="@+id/rbShop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="false"
+                android:drawableTop="@drawable/selector_main_btn_shopcart"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="#babcbf" />
         </RadioGroup>
 
     </LinearLayout>
